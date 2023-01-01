@@ -115,7 +115,7 @@ def account_submenu():
     elif user_selection == 'n':
         pass
     elif user_selection == 's':
-        pass
+        select_account()
     elif user_selection == 'r':
         pass
     elif user_selection == 'l':
@@ -125,6 +125,53 @@ def account_submenu():
     else:
         print("Incorrect command, please try again.")
         account_submenu()
+
+
+def selected_account_submenu(account_name):
+    print(f"""
+    Account {account_name}
+
+    'b' - Show balance
+    'l' - List account transactions
+            - time constrained
+                - month
+                - year
+            - category constrained
+    't' - Add transaction
+    'm' - Modify transaction
+    'D' - Delete transaction
+    'B' - Go back to Accounts Submenu
+    'M' - Go back to Main Menu
+    'Q' - Close application
+
+    Select action above
+    """)
+    user_selection = input()
+    if user_selection == 'Q':
+        pass
+    elif user_selection == 'M':
+        main_menu()
+    elif user_selection == 'B':
+        account_submenu()
+    elif user_selection == 'b':
+        pass
+    elif user_selection == 'l':
+        pass
+    elif user_selection == 't':
+        pass
+    elif user_selection == 'm':
+        pass
+    elif user_selection == 'D':
+        pass
+    else:
+        print("Incorrect command, please try again.")
+        selected_account_submenu(account_name)
+
+def select_account() -> None:
+    print("Select which account?: ")
+    user_selection = input()
+    selected_account_submenu(user_selection)
+    return None
 
 
 def category_submenu():
